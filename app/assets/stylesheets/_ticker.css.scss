@@ -1,0 +1,25 @@
+#ticker {
+	height: 975px;
+}
+
+#ticker-wrapper {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+
+#ticker-wrapper ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	transition: all 1500ms ease-in;
+}
+
+#ticker-wrapper li {
+	display: block;
+	position: relative;
+	margin-bottom: 0.3em;
+}
