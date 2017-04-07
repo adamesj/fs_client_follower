@@ -13,18 +13,4 @@ class User < ApplicationRecord
   def facebook # call to the facebook API after authentication
     @facebook ||= Koala::Facebook::API.new(oauth_token)
   end
-
-  def get_post_message(client_handle) # returns an array of hashes from the client's page
-    all_posts = facebook.get_connection(client_handle, "posts", {
-      fields: ['message', 'link', 'created_time', 'updated_time']
-    })
-    post = all_posts.first
-    post["message"]
-  end
-
-  def get_post_picture(client_handle) # returns an array of hashes from the client's page
-    all_posts = facebook.get_connection(client_handle, "posts").first
-    picture = facebook.get_connection(all_posts['id'], 'attachments').first
-    picture["media"]["image"]["src"]
-  end
 end

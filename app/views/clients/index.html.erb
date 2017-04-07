@@ -2,7 +2,7 @@
 
 <h1>Latest Twitter Posts</h1>
 
-<%= link_to 'New Twitter Post', new_twitter_post_path, class: 'button' %>
+<%= link_to 'New Twitter Post', new_client_path, class: 'button' %>
 
 <table>
   <thead>
@@ -12,11 +12,6 @@
     </tr>
   </thead>
 </table>
-
-
-<% @twitter_posts.fetch_image.each do |tweet| %>
-  <%= image_tag(tweet.media[0]["media_url"], :size => tweet.media[0]["sizes"]["small"]) if(tweet.media.present?) %>
-<% end %> 
 
 <div id="ticker">
   <div id="ticker-wrapper">
