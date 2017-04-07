@@ -8,8 +8,12 @@
 <br>
 <br>
 
-<% if current_user %>
-  <%= image_tag(current_user.get_picture["media"]["image"]["src"]) %>
+<% @clients.each do |client| %>
+
+  <% if current_user %>
+    <%= image_tag(current_user.get_picture(client.facebook_sn)["media"]["image"]["src"]) %>
+  <% end %>
+
 <% end %>
 
 <table>
