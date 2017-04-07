@@ -13,4 +13,9 @@ class User < ApplicationRecord
   def facebook # call to the facebook API after authentication
     @facebook ||= Koala::Facebook::API.new(oauth_token)
   end
+
+  def get_picture
+    post = facebook.get_connections("matchbooklearning", "posts").first
+    picture = facebook.get_connections(post['id'], 'attachments').first
+  end
 end

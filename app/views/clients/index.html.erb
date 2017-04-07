@@ -4,6 +4,14 @@
 
 <%= link_to 'New Twitter Post', new_client_path, class: 'button' %>
 
+<br>
+<br>
+<br>
+
+<% if current_user %>
+  <%= image_tag(current_user.get_picture["media"]["image"]["src"]) %>
+<% end %>
+
 <table>
   <thead>
     <tr>
