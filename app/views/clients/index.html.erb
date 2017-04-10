@@ -8,13 +8,6 @@
 <br>
 <br>
 
-<% @clients.each do |client| %>
-
-  <% if current_user %>
-    <%= image_tag(current_user.get_picture(client.facebook_sn)["media"]["image"]["src"]) %>
-  <% end %>
-
-<% end %>
 
 <table>
   <thead>
@@ -31,6 +24,7 @@
       <% @posts.each do |post| %>
         <li>
           <blockquote class="twitter-tweet" lang="en">
+            <%=  image_tag(profile_image_url(post), width: '400') %>
             <p>@<%= post[:handle] %></p>
             <p><%= parsed_post post[:data] %></p>
             <br>
