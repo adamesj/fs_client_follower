@@ -59,6 +59,6 @@ class ClientsController < ApplicationController
     end
 
     def client_params
-      params.require(:twitter_post).permit(:name, :description, :twitter_handle, :facebook_sn)
+      params.require(:client).permit(:name, :description, :twitter_handle, :facebook_sn)
     end
 end

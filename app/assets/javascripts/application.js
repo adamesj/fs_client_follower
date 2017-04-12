@@ -11,9 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
 (function() {
 	function Ticker( element ) {
 		this.el = document.getElementById( element );

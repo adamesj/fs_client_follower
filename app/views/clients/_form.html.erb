@@ -1,10 +1,10 @@
-<%= form_for(@twitter_post) do |f| %>
-  <% if @twitter_post.errors.any? %>
+<%= form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(twitter_post.errors.count, "error") %> prohibited this twitter_post from being saved:</h2>
+      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
 
       <ul>
-      <% @twitter_post.errors.full_messages.each do |message| %>
+      <% @client.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

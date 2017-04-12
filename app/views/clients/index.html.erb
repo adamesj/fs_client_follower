@@ -1,39 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Latest Twitter Posts</h1>
-
-<%= link_to 'New Twitter Post', new_client_path, class: 'button' %>
+<div id="new_client_button">
+  <%= link_to 'New Twitter Post', new_client_path, class: 'button' %>
+</div>
 
 <br>
 <br>
-<br>
-
-
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-</table>
 
 <div id="ticker">
   <div id="ticker-wrapper">
     <ul id="ticker-wrapper-inner">
-      <% @posts.each do |post| %>
-        <li>
-          <blockquote class="twitter-tweet" lang="en">
-            <%=  image_tag(profile_image_url(post), width: '400') %>
-            <p>@<%= post[:handle] %></p>
-            <p><%= parsed_post post[:data] %></p>
-            <br>
-            <p><%= post[:data].created_at.in_time_zone('Eastern Time (US & Canada)').to_s(:humanized_ago) %></p>
-            <p id="tweet_icons"><i class="fa fa-retweet"></i> <%= post[:data].retweet_count %></p>
-            <p id="tweet_icons"><i class="fa fa-heart"></i> <%= post[:data].favorite_count %></p>
-          </blockquote>
-        </li>
-      <% end %>
+      <div class="pure-g">
+        <% @posts.each do |post| %>
+          <div class="pure-u-1-2 pure-u-lg-1-6 pure-u-xl-1-6">
+            <li>
+              <blockquote class="twitter-tweet" lang="en">
+                <%=  image_tag(profile_image_url(post), width: '200') %>
+                <p>@<%= post[:handle] %></p>
+                <p><%= parsed_post post[:data] %></p>
+                <br>
+                <p><%= post[:data].created_at.in_time_zone('Eastern Time (US & Canada)').to_s(:humanized_ago) %></p>
+                <p id="tweet_icons"><i class="fa fa-retweet"></i> <%= post[:data].retweet_count %></p>
+                <p id="tweet_icons"><i class="fa fa-heart"></i> <%= post[:data].favorite_count %></p>
+              </blockquote>
+            </li>
+          </div>
+        <% end %>
+      </div>
     </ul>
   </div>
 </div>
