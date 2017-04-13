@@ -1,7 +1,7 @@
 class TweetFetcherService
 	def self.get_tweets
 		@clients.each do |client| # For each client in the array
-			TwitterApi.our_public_tweets(client.twitter_handle, 5).each do |tweet| # Grab 20 of the most recent tweets
+			TwitterApi.our_public_tweets(client.twitter_handle,  5).each do |tweet| # Grab 20 of the most recent tweets
 				@tweets << { data: tweet, handle: client.twitter_handle } # Distinguishes which tweet belongs to an author. Creates an array of hashes with the tweet and author.
 			end
 		end

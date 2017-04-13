@@ -1,10 +1,11 @@
-<div id="container">
-	<div id="user_nav">
-		<% if current_user %>
+<ul class="navbar">
+  <li><a href="default.asp">Home</a></li>
+  <li><a href="news.asp">News</a></li>
+  <li><% if current_user %>
 			Signed in as <strong><%= current_user.name %></strong>
 			<%= link_to "Sign out", signout_path, :method => :delete, id: "sign_out" %>
 		<% else %>
 			<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
 		<% end %>
-	</div>
-</div>
+	</li>
+</ul>
