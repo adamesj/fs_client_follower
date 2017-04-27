@@ -1,7 +1,4 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
-
+@import 'materialize';
 @import 'tweet';
 @import 'ticker';
 @import 'navigation';
@@ -10,6 +7,7 @@
 
 body {
   overflow-x: hidden;
+  background: #fafafa;
 }
 
 .button {

@@ -21,6 +21,7 @@ gem 'twitter'
 gem 'font-awesome-sass'
 gem 'koala'
 gem 'omniauth-facebook'
+gem 'materialize-sass'
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -1,11 +1,17 @@
-<ul class="navbar">
-  <li><a href="default.asp">Home</a></li>
-  <li><a href="news.asp">News</a></li>
-  <li><% if current_user %>
-			Signed in as <strong><%= current_user.name %></strong>
-			<%= link_to "Sign out", signout_path, :method => :delete, id: "sign_out" %>
-		<% else %>
-			<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-		<% end %>
-	</li>
-</ul>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Tweet Tracker</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="sass.html">Sass</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <li>
+      	<% if current_user %>
+					Signed in as <strong><%= current_user.name %></strong>
+					<%= link_to "Sign out", signout_path, :method => :delete, id: "sign_out" %>
+				<% else %>
+					<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+				<% end %>
+      </li>
+    </ul>
+  </div>
+</nav>

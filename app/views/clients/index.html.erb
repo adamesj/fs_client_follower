@@ -4,25 +4,26 @@
   <%= link_to 'New Twitter Post', new_client_path, class: 'button' %>
 </div>
 
-<br>
-<br>
-
 <div id="ticker">
   <div id="ticker-wrapper">
     <ul id="ticker-wrapper-inner">
-      <div class="pure-g">
+      <div class="row">
         <% @posts.each do |post| %>
-          <div class="pure-u-1-2 pure-u-lg-1-3 pure-u-xl-1-3">
+          <div class="col s2 m4 l4 xl4">
             <li>
-              <blockquote class="twitter-tweet" lang="en">
-                <%=  image_tag(profile_image_url(post), width: '200') %>
-                <p>@<%= post[:handle] %></p>
-                <p><%= parsed_post post[:data] %></p>
-                <br>
-                <p><%= post[:data].created_at.in_time_zone('Eastern Time (US & Canada)').to_s(:humanized_ago) %></p>
-                <p id="tweet_icons"><i class="fa fa-retweet"></i> <%= post[:data].retweet_count %></p>
-                <p id="tweet_icons"><i class="fa fa-heart"></i> <%= post[:data].favorite_count %></p>
-              </blockquote>
+              <div class="card">
+                <div class="card-content">
+                  <%=  image_tag(profile_image_url(post), style: 'height: 200px; width: 265px; display: block; margin: 0 auto; border-radius: 2%;') %>
+                  <p>@<%= post[:handle] %></p>
+                  <p><%= parsed_post post[:data] %></p>
+                  <br>
+                  <p><%= post[:data].created_at.in_time_zone('Eastern Time (US & Canada)').to_s(:humanized_ago) %></p>
+                </div>
+                <div class="card-action">
+                  <p id="tweet_icons"><i class="fa fa-retweet"></i> <%= post[:data].retweet_count %></p>
+                  <p id="tweet_icons"><i class="fa fa-heart"></i> <%= post[:data].favorite_count %></p>
+                </div>
+              </div>
             </li>
           </div>
         <% end %>
@@ -30,3 +31,4 @@
     </ul>
   </div>
 </div>
+
