@@ -23,6 +23,8 @@ gem 'koala'
 gem 'omniauth-facebook'
 gem 'materialize-sass'
 
+gem 'rails_12factor', group: :production
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
