@@ -52,7 +52,7 @@
 				self.wrapper.style.top = "-" + top + "px";
 
 
-			}, 3000 );
+			}, 4000 );
 		},
 
 		hover: function() {

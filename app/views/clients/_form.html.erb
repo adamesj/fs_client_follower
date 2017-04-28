@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  <div class="card">
+  <div class="card client_form">
     <div class="card-content">
       <div class="input-field">
         <%= f.label :name %>
@@ -27,7 +27,7 @@
         <%= f.text_area :description, class: 'materialize-textarea' %>
       </div>
 
-      <div class="card-action">
+      <div class="actions">
         <%= f.submit 'Submit', class: 'waves-effect waves-light btn' %> |
         <%= link_to 'Back', clients_path, class: 'waves-effect waves-light btn', style: "background-color:blue;"  %>
       </div>

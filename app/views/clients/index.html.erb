@@ -17,6 +17,8 @@
                     </div>
                     <div class="col s7 m7 l7 xl7">
                       <strong>@<%= post[:handle] %></strong>
+                      <br>
+                      <br>
                       <p><%= parsed_post post[:data] %></p>
                       <br>
                       <p><%= post[:data].created_at.in_time_zone('Eastern Time (US & Canada)').to_s(:humanized_ago) %></p>
